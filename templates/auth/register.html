@@ -1,0 +1,71 @@
+{% extends "base/base.html" %}
+{% block content %}
+<div class="container" style="margin-top: 25px;">
+    <div></div>
+    <div>
+        <h1 style="text-align: center;">Register</h1>
+        {% if messages %}
+        {% for message in messages %}
+            <p style="text-align: center; color: gold;">{{message}}</p>
+        {% endfor %}
+        {% endif %}
+        <form action="/register/add" enctype="multipart/form-data" method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="">
+                    {{form.username.label}}
+                </label>
+                {{form.username}}
+            </div>
+            <div class="form-group">
+                <label for="">
+                    {{form.password1.label}}
+                </label>
+                {{form.password1}}
+            </div>
+            <div class="form-group">
+                <label for="">
+                    {{form.password2.label}}
+                </label>
+                {{form.password2}}
+            </div>
+            <div class="form-group">
+                <label for="">
+                    {{form.firstname.label}}
+                </label>
+                {{form.firstname}}
+            </div>
+            <div class="form-group">
+                <label for="">
+                    {{form.lastname.label}}
+                </label>
+                {{form.lastname}}
+            </div>
+            <div class="form-group">
+                <label for="">
+                    {{form.age.label}}
+                </label>
+                {{form.age}}
+            </div>
+            <div class="form-group">
+                <label for="">
+                    {{form.gender.label}}
+                </label>
+                {{form.gender}}
+            </div>
+            <div class="from-group">
+                <label for="">
+                    {{form.photo_profile.label}}
+                </label>
+                {{form.photo_profile}}
+            </div>
+            <div class="form-grop">
+                <button class="btn btn-primary"">Submit</button>
+                <a href="/login/" class="btn btn-warning">Back</a>
+            </div>
+        </form>
+    </  div>
+    <div></div>
+</div>
+  
+{% endblock content %}

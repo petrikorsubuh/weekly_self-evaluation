@@ -1,0 +1,21 @@
+{% extends "base/base.html" %}
+{% block content %}
+<div class="container">
+    <div>
+        <form action="{% url 'targets:update' id %}" method="POST">
+            {% csrf_token %}
+            {{form.id}}
+            <div class="form-group">
+                <label for="">
+                    {{form.name.label}}
+                </label>
+                {{form.name}}
+            </div>
+            <div class="form-group">
+                <button class="btn btn-info" type="submit">Submit</button>
+                <a href="/targets/" class="btn btn-warning">Cancel</a>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock content %}

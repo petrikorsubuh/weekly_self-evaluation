@@ -1,0 +1,27 @@
+{% extends "base/base.html" %}
+{% block content %}
+{% include "base/navbar.html" %}
+<div class="container">
+    <div class="">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title" style="text-align: center;"> ADD CATEGORY</h4>
+                <form action="{% url 'targets:save' %}" class="forms-sample" method="POST">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="">
+                            {{form.name.label}}
+                        </label>
+                        {{form.name}}
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-success mr-2">Submit</button>
+                        <a href="/targets/" class="btn btn-info">Cancel</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+  
+{% endblock content %}

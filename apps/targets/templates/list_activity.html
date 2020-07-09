@@ -1,0 +1,42 @@
+{% extends "base/base.html" %}
+{% block content %}
+{% include "base/navbar.html" %}
+<div class="container">
+    <div class="col"></div>
+    <div class="col">
+        <h4 style="text-align: center;">{{tittle}}</h4>
+        <table class="table">
+            <thead>
+                <tr>
+                    <td>No</td>
+                    <td>Activity</td>
+                    <td>Target</td>
+                    <td>Unit</td>
+                    <td></td>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in activity %}
+                    <tr>
+                        <td>{{forloop.counter}}</td>
+                        <td>{{i.activity}}</td>
+                        <td>{{i.target_set}}</td>
+                        <td>{{i.unit}}</td>
+                        <td>
+                            <a href="{% url 'targets:edit_activity' id i.id %}" class="btn btn-primary">Edit</a>
+                            <a href="{% url 'targets:delete_activity' id i.id %}" class="btn btn-danger">Delete</a>
+                            
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+            <div class="form-group">
+                <a href="/targets/{{id}}/add_activity" class="btn btn-info">Add</a>
+                <a href="/targets" class="btn btn-warning">Back</a>
+            </div>
+        </table>
+    </div>
+    <div class="col"></div>
+</div>
+  
+{% endblock content %}

@@ -1,0 +1,30 @@
+{% extends "base/base.html" %}
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-6"></div>
+    <div class="col-6">
+      <div style="margin-top: 150px; margin-left: 0px;">
+        <h2 style="text-align: center;">Login</h2>
+        <form action="/login/prosses" method="post" style="margin-top: 10px;">
+          {% csrf_token %}
+          <div class="form-group">
+            <label for="" class="label">{{form.username.label}}</label>
+            {{form.username}}
+          </div>
+          <div class="form-group">
+            <label for="" class="label">{{form.password.label}}</label>
+            {{form.password}}
+          </div>
+          <div class="form-group">
+            <a href="/register/" class="btn btn-warning" type="">Register</a>
+            <button class="btn btn-info" type="submit">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% endblock content %}

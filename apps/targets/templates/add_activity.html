@@ -1,7 +1,9 @@
 {% extends "base/base.html" %}
 {% block content %}
 <div class="container">
-    <div class="card">
+    <div class="row">
+        <div class="col-4"></div>
+    <div class="col-4">
         <h4 style="text-align: center;">{{tittle}}</h4>
         <form action="{% url 'targets:save_activity' id %}" method="POST">
             {% csrf_token %}
@@ -28,6 +30,8 @@
                 <a href="{% url 'targets:activity' id %}" class="btn btn-info">cancel</a>
             </div>
         </form>
+    </div>
+    <div class="col-4"></div>
     </div>
 </div>
   

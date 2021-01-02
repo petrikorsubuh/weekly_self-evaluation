@@ -31,6 +31,9 @@ urlpatterns = [
     path('targets/', include(('apps.targets.urls', 'targets'), namespace='targets')),
     path('targets/achievement/', include(('apps.achievement.urls', 'achievement'), namespace='achievement')),
 
+    #api
+    # path('api/',include('rest_framework.urls'))
+
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

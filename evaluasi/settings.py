@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     'apps.member',
     'apps.targets',
     'apps.achievement',
+    'apps.setting',
+    'rest_framework'
 ]
 
 MIDDLEWARE = [
@@ -85,9 +87,9 @@ WSGI_APPLICATION = 'evaluasi.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'eval2',
-        'USER': 'apip',
-        'PASSWORD': 'zizu',
+        'NAME': 'eval3',
+        'USER': 'learn',
+        'PASSWORD': 'apip',
         'HOST': '127.0.0.1',
         'PORT': '3306',
     }

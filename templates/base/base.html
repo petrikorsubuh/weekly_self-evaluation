@@ -10,8 +10,15 @@
     {% include "base/js.html" %}
 </head>
 <body>
+    {% include "base/navbar.html" %}
     {% block content %}
       
     {% endblock content %}
+    <script>
+        $('#datepicker').datepicker({
+            uiLibrary: 'bootstrap4',
+            format: 'yyyy-mm-dd'
+        });
+    </script>
 </body>
 </html>

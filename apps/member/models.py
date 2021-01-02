@@ -15,4 +15,4 @@ class Profile(models.Model):
         return self.user.username
 
     class Meta:
-        db_table = 'members'
+        db_table = 'profile'

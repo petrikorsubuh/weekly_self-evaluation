@@ -6,6 +6,10 @@ from .forms import RegisterForm,LoginForm
 from django.http import HttpResponse
 from django.contrib.auth import logout,login,authenticate
 from django.contrib import messages
+from apps.achievement.tests import label_filter,date_filter
+from apps.achievement.models import Achievement
+from datetime import datetime
+from django.http import JsonResponse
 
 class FromRegister(View):
     template_name = 'auth/register.html'
@@ -80,6 +84,13 @@ class Logout(View):
 class MemberLandingPage(View):
     template_name = 'member_landing_page.html'
     def get(self,request):
+        start_date = datetime.strptime('2020-11-6',"%Y-%m-%d")
+        end_date = datetime.strptime('2021-1-22',"%Y-%m-%d")
+        label = label_filter(start_date,end_date)
+        data = date_filter(start_date,end_date)
         return render(request,self.template_name,{
-            'kalimat':'udah masuk'
+            'kalimat':'udah masuk',
+            'label':label,
+            'data':data,
+            'ln':len(data)
         })

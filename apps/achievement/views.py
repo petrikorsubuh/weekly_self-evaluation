@@ -31,7 +31,8 @@ class ListAchievement(View):
 
 
         return render(request,self.template_name,{
-            'achievement':achievements
+            'achievement':achievements,
+            'list_acv':achievement_list
         })
 
 class AddReport(View):

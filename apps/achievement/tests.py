@@ -7,7 +7,7 @@ from apps.achievement.models import Achievement
 
 def date_filter(start_date,end_date):
     poin = []
-    while start_date!=end_date:
+    while start_date!=end_date and start_date<end_date:
         box = [] #coba cek apakah box nambah terus --> solusi
         obj =Achievement.objects.filter(date=start_date)
         for o in obj:
@@ -29,7 +29,7 @@ def date_filter(start_date,end_date):
 
 
 def label_filter(date_awal,date_akhir):
-    month_dict = {"1":"Januar","2":"Februari","3":"Maret","4":"April","5":"Mei","6":"Juni"
+    month_dict = {"1":"Januari","2":"Februari","3":"Maret","4":"April","5":"Mei","6":"Juni"
                  ,"7":"Juli","8":"Agustus","9":"September","10":"Oktober","11":"November","12":"Desember"}
     label_month = []
     label =[]

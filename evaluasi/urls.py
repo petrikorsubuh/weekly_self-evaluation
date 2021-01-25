@@ -25,7 +25,10 @@ urlpatterns = [
     path('login/', views.LoginView.as_view()),
     path('login/prosses', views.LoginProsses.as_view()),
     path('logout/', views.Logout.as_view()),
-    path('member_landingPage/', views.MemberLandingPage.as_view()),
+    path('member_landingPage', views.MemberLandingPage.as_view()),
+    # path('member_landingPage/<str:start_date>/<str:end_date>', views.SearchDate.as_view()),
+    #whit query date
+    # path('member_landingPage/', views.MemberLandingPage.as_view()),
 
     #categori
     path('targets/', include(('apps.targets.urls', 'targets'), namespace='targets')),
